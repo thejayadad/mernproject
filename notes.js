@@ -1,4 +1,119 @@
 /**
+ to get started, i have a empty folder on my desktop named cernapp 
+
+ then opened it in vs code
+
+ we will include two folders, frontend an backend
+
+ the first part will be covering the backend express server
+ 
+ the second part will focus on the frontend
+
+so open a new terminal by using the shortcut command j
+
+or clicking on the menu icon in the upper left
+
+once open type in the command
+
+npm init -y
+
+this created a package.json which will manage our depencies
+
+lets go ahead and install a few dependencies needed to get our server going. 
+
+so type npm i 
+
+then express mongoose dotenv
+
+press enter and this will install these dependices which we can see in the pacakage.json file
+
+express will be the web framework to help build our api and provide data for the frontend
+
+mongoose to interact with the mongodb database
+
+dotenv is to give access to the enviornment variables. 
+
+Reviewing the root directory we have our node modules setup, the depencies are installed in the package.json
+
+ow in the backend directory, lets create a file name server.js
+
+this will be the entry point for our api
+
+before we setup our express server, i want to use a modern approach to access the depencies
+
+so in the package.json
+
+in the scripts object, add a field name type
+
+provide a value name module. 
+
+this allows us to use the import syntax when accessing data in the file.
+
+back in server.js lets begin by importing express from express
+
+then const app = express be sure to call the function
+
+we want the app to listen on port 5000 
+
+to confirm its working lets log server is going to the console 
+
+now we just need to start the server
+
+we could start it by going tto the terminal, cd'ng into the backend folder
+
+then typeing node server.js
+
+the challenge with this is we wont get realtime feedbak from the server
+
+instead lets install another packaage name nodemon
+
+npm i nodemon -D 
+
+this will make it a dev dependency
+
+in the package.json we see it listed
+
+to have it run then provide realtime feedback, 
+
+under scripts, replace test with dev 
+
+the value associated with it should point to the access file
+
+since we are using nodemon include it first
+
+then backend which is the directory that holds the access file
+
+then slash the name of the file which is server.js
+
+lets save the file
+
+then in the terminal run npm run dev
+
+now when we make a update the server will automatically refresh and give realtime feedback
+
+lets setup the first route so within server.js
+
+type app.get("/")
+
+the first paramater will be teh route, which is the root route of slash
+
+then within the function we get the req and response
+
+for now lets send, srever is goin
+
+now go to localhost:5000 and we see the message 
+
+if we change whats being sent, in the server the js  
+
+save teh file and go back to localhost, we see theupdate on screen. 
+
+this route will display all subjects from the database. 
+
+lets go ahead and setup our database now which will be mongodb.
+
+
+
+
 backend folder/frontend
 npm init -y
 npm i express mongoose dotenv
