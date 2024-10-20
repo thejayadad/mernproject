@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/header";
 import Row from "./components/row";
-import { FiEdit, FiTrash } from "react-icons/fi";
 import { useSubjectStore } from "./store/subject";
+import SubjectList from "./components/subject/subject-list";
 
 function App() {
   const {
@@ -19,7 +19,7 @@ function App() {
   }, [fetchSubjects]);
 
   const handleEditClick = (subject) => {
-    setEditingSubject(subject);
+    setEditingSubject({ ...subject }); // Clone the subject for editing
   };
 
   const handleDeleteClick = async (id) => {
@@ -39,52 +39,25 @@ function App() {
     setEditingSubject((prev) => ({ ...prev, [field]: value }));
   };
 
+  const handleCancelClick = () => {
+    setEditingSubject(null); // Clear editing subject when cancel is clicked
+  };
+
   return (
     <>
       <div>
         <Header />
         <div className="background">
           <Row />
-          <div className="subject-list">
-            {subjects.map((subject) => (
-              <div key={subject._id} className="card">
-                <div className="left-card">
-                  <div className="color-indicator" style={{ backgroundColor: subject.color }}></div>
-                  {editingSubject && editingSubject._id === subject._id ? (
-                    <input
-                      type="text"
-                      value={editingSubject.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                    />
-                  ) : (
-                    <p>{subject.name}</p>
-                  )}
-                </div>
-                <div className="action">
-                  {editingSubject && editingSubject._id === subject._id ? (
-                    <input
-                      type="text"
-                      value={editingSubject.comfort}
-                      onChange={(e) => handleInputChange("comfort", e.target.value)}
-                    />
-                  ) : (
-                    <span>{subject.comfort}</span>
-                  )}
-                  {editingSubject && editingSubject._id === subject._id ? (
-                    <>
-                      <button onClick={handleUpdateClick}>Update</button>
-                      <button onClick={() => setEditingSubject(null)}>Cancel</button>
-                    </>
-                  ) : (
-                    <>
-                      <FiEdit onClick={() => handleEditClick(subject)} />
-                      <FiTrash onClick={() => handleDeleteClick(subject._id)} />
-                    </>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+          <SubjectList
+            subjects={subjects}
+            editingSubject={editingSubject}
+            handleEditClick={handleEditClick}
+            handleDeleteClick={handleDeleteClick}
+            handleUpdateClick={handleUpdateClick}
+            handleInputChange={handleInputChange}
+            handleCancelClick={handleCancelClick} // Pass the cancel function
+          />
         </div>
       </div>
     </>
