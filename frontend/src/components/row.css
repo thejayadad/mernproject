@@ -1,0 +1,66 @@
+
+.row{
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 16px;
+}
+h1{
+    font-size: 24px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #222;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.modal-btn{
+    background-color: white;
+    color: #3098C6;
+    font-size: 15px;
+    font-weight: bold;
+}
+.subject-list{
+    display: flex;
+    flex-direction: column;
+    width: full;
+    max-width: 1200px;
+    margin: auto;
+    gap: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+
+}
+.card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: full;
+    height: 100px;
+    background-color: white;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.card:hover{
+    background-color: antiquewhite;
+}
+.color-indicator {
+    width: 10px; /* Width of the color indicator */
+    height: 80px; /* Height of the color indicator */
+    background-color: orangered; /* Color of the indicator */
+    margin-right: 10px; /* Space between color and topic name */
+}
+.left-card{
+    display: flex;
+    align-items: center;
+}
+.action{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

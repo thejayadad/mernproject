@@ -1,0 +1,67 @@
+
+.modal-btn{
+    outline: none;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensures the modal is above other content */
+  }
+  
+  .modal-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 400px; /* You can adjust the width */
+    max-width: 90%; /* Responsive design */
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-body {
+    margin-top: 10px;
+  }
+  
+  .modal-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .close-button,
+  .footer-button {
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+  }
+  
+  .footer-button {
+    background-color: #222;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .footer-button:hover {
+    background-color: #555; /* Darker shade on hover */
+  }
+  

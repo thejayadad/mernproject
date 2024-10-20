@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,html,
+:root{
+  height: 100vh;
+  overflow: hidden;
+}
+.background{
+  width: full;
+  background-color: #3098C6;
+  height: 90vh;
+}
+
+.subject-form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.subject-form div {
+  margin-bottom: 15px;
+}
+
+.color-options {
+  display: flex;
+  gap: 10px; /* Space between colors */
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent; /* Default border */
+  border-radius: 50%; /* Make swatches circular */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+.color-swatch:hover {
+  border: 2px solid #555; /* Highlight on hover */
+}
+
+.color-swatch.selected {
+  border: 2px solid #ffcc00; /* Highlighted border for selected color */
+  transform: scale(1.1); /* Slightly enlarge the selected color */
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
